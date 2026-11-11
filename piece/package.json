@@ -1,7 +1,7 @@
 {
   "name": "activepieces-piece-smsgora",
-  "version": "1.0.0",
-  "description": "Activepieces piece for SMS Gora: send and receive SMS through your own Android phones (Tekservix).",
+  "version": "1.0.1",
+  "description": "SMS Gora SMS Gateway: Activepieces piece by Tekservix. Send and receive SMS through your own Android phones.",
   "keywords": ["activepieces", "activepieces-piece", "sms", "sms-gateway", "android", "smsgora", "tekservix"],
   "homepage": "https://tekservix.com/smsgora",
   "repository": { "type": "git", "url": "git+https://github.com/TekservixHQ/activepieces-piece-smsgora.git" },
