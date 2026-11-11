@@ -23,6 +23,12 @@ export const findReceivedSmsAction = createAction({
     limit: smsGoraProps.limit,
   },
   async run(context) {
-find-received-sms0
+    const { device_id, phone, since, limit } = context.propsValue;
+    return smsGoraApi.call({
+      apiKey: context.auth.secret_text,
+      method: HttpMethod.GET,
+      path: device_id ? `/devices/${device_id}/get-received-sms` : '/received-sms',
+      query: smsGoraApi.cleanQuery({ phone, since: since ? new Date(since).toISOString() : undefined, limit }),
+    });
   },
 });

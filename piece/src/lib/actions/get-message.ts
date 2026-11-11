@@ -20,6 +20,10 @@ export const getMessageAction = createAction({
     message_id: smsGoraProps.messageId,
   },
   async run(context) {
-get-message0
+    return smsGoraApi.call({
+      apiKey: context.auth.secret_text,
+      method: HttpMethod.GET,
+      path: `/messages/${context.propsValue.message_id}`,
+    });
   },
 });

@@ -20,6 +20,10 @@ export const cancelMessageAction = createAction({
     message_id: smsGoraProps.messageId,
   },
   async run(context) {
-cancel-message0
+    return smsGoraApi.call({
+      apiKey: context.auth.secret_text,
+      method: HttpMethod.POST,
+      path: `/messages/${context.propsValue.message_id}/cancel`,
+    });
   },
 });

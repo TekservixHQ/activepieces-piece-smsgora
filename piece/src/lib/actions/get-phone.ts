@@ -20,6 +20,10 @@ export const getPhoneAction = createAction({
     device_id: smsGoraProps.device({ required: true, description: 'The phone to look up.' }),
   },
   async run(context) {
-get-phone0
+    return smsGoraApi.call({
+      apiKey: context.auth.secret_text,
+      method: HttpMethod.GET,
+      path: `/devices/${context.propsValue.device_id}`,
+    });
   },
 });

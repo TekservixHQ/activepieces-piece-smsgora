@@ -18,6 +18,6 @@ export const listPhonesAction = createAction({
   props: {
   },
   async run(context) {
-list-phones0
+    return smsGoraApi.call({ apiKey: context.auth.secret_text, method: HttpMethod.GET, path: '/devices' });
   },
 });

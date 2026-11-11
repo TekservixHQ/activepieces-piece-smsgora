@@ -47,6 +47,18 @@ export const findMessagesAction = createAction({
     limit: smsGoraProps.limit,
   },
   async run(context) {
-find-messages0
+    const { direction, status, phone, since, limit } = context.propsValue;
+    return smsGoraApi.call({
+      apiKey: context.auth.secret_text,
+      method: HttpMethod.GET,
+      path: '/messages',
+      query: smsGoraApi.cleanQuery({
+        direction,
+        status,
+        phone,
+        since: since ? new Date(since).toISOString() : undefined,
+        limit,
+      }),
+    });
   },
 });
