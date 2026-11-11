@@ -1,0 +1,26 @@
+{
+  "name": "activepieces-piece-smsgora",
+  "version": "1.0.0",
+  "description": "Activepieces piece for SMS Gora: send and receive SMS through your own Android phones (Tekservix).",
+  "keywords": ["activepieces", "activepieces-piece", "sms", "sms-gateway", "android", "smsgora", "tekservix"],
+  "homepage": "https://tekservix.com/smsgora",
+  "repository": { "type": "git", "url": "git+https://github.com/TekservixHQ/activepieces-piece-smsgora.git" },
+  "bugs": { "url": "https://github.com/TekservixHQ/activepieces-piece-smsgora/issues" },
+  "license": "MIT",
+  "author": "Tekservix <support@tekservix.com>",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json && cp package.json dist/",
+    "lint": "eslint 'src/**/*.ts'"
+  },
+  "dependencies": {
+    "@activepieces/pieces-common": "workspace:*",
+    "@activepieces/pieces-framework": "workspace:*",
+    "@activepieces/core-piece-types": "workspace:*",
+    "@activepieces/core-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "tslib": "2.6.2"
+  }
+}
