@@ -29,7 +29,7 @@ async function main() {
   const secret = 'whsec_test';
   const body = { event: 'sms.received', data: { phone: '+250788123456', message: 'Muraho / café' } };
   const compact = JSON.stringify(body);
-  const php = compact.replace(/\//g, '\/').replace(/[\u007f-￿]/g, (c) => '\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
+  const php = compact.split('/').join(String.fromCharCode(92) + '/').replace(new RegExp('[' + String.fromCharCode(0x7f) + '-' + String.fromCharCode(0xffff) + ']', 'g'), (c) => String.fromCharCode(92) + 'u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
   const sign = (s) => 'sha256=' + crypto.createHmac('sha256', secret).update(s).digest('hex');
   const store = { get: async () => ({ id: '1', secret }) };
   const run = (headers, rawBody) => trigger.run({ store, payload: { body, headers, rawBody, queryParams: {} } });
