@@ -2,6 +2,8 @@
 
 <img src="logo.png" width="72" align="right" alt="SMS Gora">
 
+**SMS Gora SMS Gateway** - Activepieces piece: send and receive SMS through your own Android phones. By Tekservix.
+
 Send and receive SMS from your own Android phones inside [Activepieces](https://www.activepieces.com) flows, with [SMS Gora](https://tekservix.com/smsgora) by Tekservix.
 
 **You need a Tekservix account with SMS Gora and at least one Android phone linked with the SMS Gora app.** The piece is a client of the public SMS Gora API: your plan, limits and phones are managed in your SMS Gora dashboard. [Create an account](https://tekservix.com/smsgora) · [API docs](https://tekservix.com/smsgora/docs/)
