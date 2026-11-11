@@ -38,7 +38,7 @@ function cleanQuery(values: Record<string, string | number | undefined | null>):
 function phpJson(compact: string): string {
   return compact
     .replace(/\//g, '\\/')
-    .replace(/[\u007f-Ffff]/g, (c) => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
+    .replace(/[\u007f-\uffff]/g, (c) => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
 }
 
 function verifySignature({ rawBody, body, signature, secret }: VerifyParams): boolean {
